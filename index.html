@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Facebook</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ═══════════ LEFT PANEL ═══════════ -->
+  <div class="left-panel">
+
+    <!-- FB Circle Logo -->
+    <div class="fb-circle-logo">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="18" r="18" fill="#1877F2"/>
+        <path d="M25 18.0006C25 14.134 21.866 11 18 11C14.134 11 11 14.134 11 18.0006C11 21.4978 13.5584 24.4018 16.9063 24.9166V20.0772H15.1289V18.0006H16.9063V16.4528C16.9063 14.6991 17.9516 13.7321 19.5491 13.7321C20.3145 13.7321 21.1133 13.8685 21.1133 13.8685V15.5916H20.2324C19.3652 15.5916 19.0938 16.1319 19.0938 16.6864V18.0006H21.0313L20.7197 20.0772H19.0938V24.9166C22.4416 24.4018 25 21.4978 25 18.0006Z" fill="white"/>
+      </svg>
+    </div>
+
+    <!-- Collage illustration -->
+    <div class="collage">
+      <!-- Phone mockup top -->
+      <div class="phone-card top-phone">
+        <div class="phone-bar"></div>
+        <div class="phone-img top-img">
+          <div class="time-badge">🕐 16:45</div>
+          <div class="photo-placeholder friends-photo"></div>
+        </div>
+      </div>
+      <!-- Bottom post card -->
+      <div class="post-card">
+        <div class="post-icon">
+          <svg viewBox="0 0 24 24" fill="#1877f2" width="20" height="20"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        </div>
+        <div class="post-img music-photo"></div>
+        <div class="post-lines">
+          <div class="post-line short"></div>
+          <div class="post-line shorter"></div>
+        </div>
+      </div>
+      <!-- Avatar circle bottom right -->
+      <div class="avatar-circle">
+        <div class="avatar-inner"></div>
+      </div>
+      <!-- Reaction heart -->
+      <div class="reaction heart">❤️</div>
+      <!-- Reaction emoji top -->
+      <div class="reaction laugh">😄</div>
+      <!-- Dots pagination -->
+      <div class="dots-row">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <!-- Hero text -->
+    <div class="hero-text">
+      <span class="explore-black">Explore<br>the<br>things<br></span>
+      <span class="explore-blue">you love.</span>
+    </div>
+
+  </div>
+
+  <!-- ═══════════ DIVIDER ═══════════ -->
+  <div class="v-divider"></div>
+
+  <!-- ═══════════ RIGHT PANEL ═══════════ -->
+  <div class="right-panel">
+    <div class="login-box">
+      <h1 class="login-title">Log in to Facebook</h1>
+
+      <form id="loginForm" novalidate>
+        <div class="field" id="f-email">
+          <input class="inp" type="text" id="email"
+            placeholder="Email address or mobile number"
+            autocomplete="username"/>
+          <div class="field-err" id="fe-email"></div>
+        </div>
+
+        <div class="field" id="f-pw">
+          <input class="inp" type="password" id="password"
+            placeholder="Password"
+            autocomplete="current-password"/>
+          <div class="field-err" id="fe-pw"></div>
+        </div>
+
+        <button class="btn-login" type="submit" id="loginBtn">
+          <span id="btnTxt">Log in</span>
+          <span class="spin" id="spin"></span>
+        </button>
+      </form>
+
+      <a class="forgotten" href="#">Forgotten password?</a>
+
+      <hr class="line"/>
+
+      <button class="btn-create" id="openSignup">Create new account</button>
+
+      <!-- Meta logo -->
+      <div class="meta-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="60" height="18">
+          <path fill="#0082FB" d="M27.3 0C12.2 0 0 12.5 0 28c0 7.6 2.9 14.1 7.6 18.5L40 80l32.4-33.5C77.1 42.1 80 35.6 80 28 80 12.5 67.8 0 52.7 0H27.3zM40 52.5L13.5 25.3C14.5 11.8 25.6 1.5 39 1.5h2C54.4 1.5 65.5 11.8 66.5 25.3L40 52.5z"/>
+          <text x="95" y="88" font-family="-apple-system,sans-serif" font-size="70" font-weight="700" fill="#1c1e21">Meta</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ SIGNUP MODAL ═══════════ -->
+<div class="overlay" id="overlay">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <div>
+        <h2>Create a new account</h2>
+        <p>It's quick and easy.</p>
+      </div>
+      <button class="modal-x" id="modalClose">&#10005;</button>
+    </div>
+    <hr class="modal-hr"/>
+    <form id="suForm" novalidate>
+      <div class="su-row2">
+        <div class="sf" id="w-fn"><input type="text" id="fn" placeholder="First name"/><span class="se" id="e-fn"></span></div>
+        <div class="sf" id="w-ln"><input type="text" id="ln" placeholder="Surname"/><span class="se" id="e-ln"></span></div>
+      </div>
+      <div class="sf" id="w-em"><input type="text" id="em" placeholder="Mobile number or email address"/><span class="se" id="e-em"></span></div>
+      <div class="sf" id="w-pw2"><input type="password" id="pw2" placeholder="New password"/><span class="se" id="e-pw2"></span></div>
+
+      <div class="su-lbl"><span>Date of birth</span><span class="qm" title="Providing your birthday helps make sure you get the right Facebook experience for your age.">&#9432;</span></div>
+      <div class="su-row3">
+        <select id="dDay"><option value="">Day</option></select>
+        <select id="dMon">
+          <option value="">Month</option>
+          <option>January</option><option>February</option><option>March</option>
+          <option>April</option><option>May</option><option>June</option>
+          <option>July</option><option>August</option><option>September</option>
+          <option>October</option><option>November</option><option>December</option>
+        </select>
+        <select id="dYr"><option value="">Year</option></select>
+      </div>
+
+      <div class="su-lbl"><span>Gender</span><span class="qm" title="You can change who sees your gender on your profile.">&#9432;</span></div>
+      <div class="su-row3">
+        <label class="gbox">Female<input type="radio" name="gender" value="female"/></label>
+        <label class="gbox">Male<input type="radio" name="gender" value="male"/></label>
+        <label class="gbox">Custom<input type="radio" name="gender" value="custom"/></label>
+      </div>
+
+      <p class="su-terms">People who use our service may have uploaded your contact information to Facebook. <a href="#">Learn more.</a></p>
+      <p class="su-terms">By clicking Sign up, you agree to our <a href="#">Terms</a>, <a href="#">Privacy Policy</a> and <a href="#">Cookies Policy</a>. You may receive SMS notifications from us and can opt out at any time.</p>
+      <div class="su-cta"><button type="submit" class="btn-signup-submit">Sign up</button></div>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast"><span id="toastMsg"></span></div>
+
+<script src="app.js"></script>
+</body>
+</html>
